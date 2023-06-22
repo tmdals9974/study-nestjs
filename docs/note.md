@@ -37,3 +37,15 @@
 - express 구조 설명, express 미들웨어 설명
 - express는 위에서 순차대로 읽어서 실행하기 때문에, 미들웨어들은 위치/순서가 중요하다.
 - 동일한 라우터가 존재해도, next를 사용한다면 두개가 순차적으로 작동 할 수 있다.
+
+## 5. 고양이 데이터 Create Read API 개발
+
+- READ, CREATE API 구현
+
+## 6. 고양이 route 분리, 모듈화
+
+- route 모듈화
+
+## 7. 고양이 데이터 Update Delete API 개발
+
+- UPDATE, DELETE API 구현
