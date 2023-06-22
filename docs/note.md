@@ -23,3 +23,7 @@
 
 - `./letsStart/` 폴더에 프로젝트 세팅
 - `tsc-watch`를 이용하여 핫로드 지원 가능
+
+## 2. Postman 설치
+
+- Postman 설명 및 설치 안내
