@@ -4,27 +4,83 @@ import { Cat, CatType } from "./app.model";
 const app: express.Express = express();
 const PORT: number = 8080;
 
-// * express는 위에서 순차대로 읽어서 실행하기 때문에, 미들웨어들은 순서가 중요하다.
+/**
+ * * logging middleware
+ * ? express는 위에서 순차대로 읽어서 실행하기 때문에, 미들웨어들은 순서가 중요하다.
+ */
 app.use((req: express.Request, res: express.Response, next) => {
   console.log("this is middleware");
   next();
 });
 
-app.get("/", (req: express.Request, res: express.Response) => {
-  res.send({ cats: Cat });
+/**
+ * * json middleware
+ * ? express는 body parsing을 기본으로 지원하지 않아서 사용하는 미들웨어.
+ */
+app.use(express.json());
+
+// * READ 고양이 전체 데이터 다 조회
+app.get("/cats", (req, res) => {
+  const cats = Cat;
+  try {
+    res.status(200).send({
+      success: true,
+      data: {
+        cats,
+      },
+    });
+  } catch (error) {
+    res.status(400).send({
+      success: false,
+      error: error instanceof Error ? error.message : error,
+    });
+  }
 });
 
-// * 동일한 라우터가 존재해도, next를 사용한다면 두개가 순차적으로 작동 할 수 있음.
-app.get("/cats/som", (req: express.Request, res: express.Response, next) => {
-  console.log("this is som logging middleware");
-  next();
+// * READ 특정 고양이 데이터 조회
+app.get("/cats/:id ", (req, res) => {
+  const params = req.params;
+
+  const cat = Cat.find((cat) => {
+    return cat.id === params["id "];
+  });
+  try {
+    res.status(200).send({
+      success: true,
+      data: {
+        cat,
+      },
+    });
+  } catch (error) {
+    res.status(400).send({
+      success: false,
+      error: error instanceof Error ? error.message : error,
+    });
+  }
 });
 
-app.get("/cats/som", (req: express.Request, res: express.Response) => {
-  res.send({ som: Cat[1] });
+// * CREATE 새로운 고양이 추가
+app.post("/cats ", (req, res) => {
+  try {
+    const data = req.body;
+    Cat.push(data);
+
+    res.status(200).send({
+      success: true,
+      data: { data },
+    });
+  } catch (error) {
+    res.status(400).send({
+      success: false,
+      error: error instanceof Error ? error.message : error,
+    });
+  }
 });
 
-// * 최종 응답값이 없을 때 실행됨. => 에러 처리 미들웨어
+/**
+ * * 404 middleware
+ * ? 최종 응답값이 없을 때 실행됨. => 에러 처리 미들웨어
+ */
 app.use((req: express.Request, res: express.Response, next) => {
   console.log("this is error middleware");
   res.send({ error: "404 not found error" });
