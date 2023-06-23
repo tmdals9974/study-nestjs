@@ -49,3 +49,9 @@
 ## 7. 고양이 데이터 Update Delete API 개발
 
 - UPDATE, DELETE API 구현
+
+## 8. express 싱글톤 패턴, 서비스 패턴
+
+- app.ts 내 express에 싱글톤 패턴 적용
+  - 싱글톤 패턴 : 객체의 인스턴스가 무조건 하나만 생성되게 하는 패턴. 메모리 낭비 방지 및 데이터 공유를 위함
+- cats.model.ts 파일에 비즈니스 로직 분리
