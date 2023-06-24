@@ -55,3 +55,8 @@
 ## 1. Database 개요
 
 - 데이터베이스 설명
+
+## 2. MongoDB Atlas 클라우드 구축
+
+- MongoDB에서 Atlas를 이용하여 지원하는 Cloud DB 구축
+
