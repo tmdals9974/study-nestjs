@@ -60,3 +60,7 @@
 
 - MongoDB에서 Atlas를 이용하여 지원하는 Cloud DB 구축
 
+## 3. MongoDB 접근 권한 설정 & Compass 셋업
+
+- IP 허용 및 DB 유저 생성 설정
+- Compass를 이용한 DB 접근 안내
