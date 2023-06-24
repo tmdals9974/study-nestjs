@@ -64,3 +64,7 @@
 
 - IP 허용 및 DB 유저 생성 설정
 - Compass를 이용한 DB 접근 안내
+
+## 4. MongoDB CRUD
+
+- MongoDB CLI를 이용한 CRUD 안내
