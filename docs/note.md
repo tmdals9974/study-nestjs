@@ -49,3 +49,9 @@
 ## 7. 고양이 데이터 Update Delete API 개발
 
 - UPDATE, DELETE API 구현
+
+# Section 2. MySQL, MongoDB 설계와 구축
+
+## 1. Database 개요
+
+- 데이터베이스 설명
