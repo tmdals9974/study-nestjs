@@ -83,3 +83,7 @@
 ## 1. NestJS 개발 환경 셋팅 & hello world!
 
 - nestjs 프로젝트 생성 및 프로젝트 구조 안내
+
+## 2. NestJS를 위한 VSCode 셋업 및 ESLinst, Prettier
+
+- VSCode 단축키 설명 및 ESLint, Prettier 설명
