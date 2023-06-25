@@ -55,3 +55,41 @@
 - app.ts 내 express에 싱글톤 패턴 적용
   - 싱글톤 패턴 : 객체의 인스턴스가 무조건 하나만 생성되게 하는 패턴. 메모리 낭비 방지 및 데이터 공유를 위함
 - cats.model.ts 파일에 비즈니스 로직 분리
+
+# Section 2. MySQL, MongoDB 설계와 구축
+
+## 1. Database 개요
+
+- 데이터베이스 설명
+
+## 2. MongoDB Atlas 클라우드 구축
+
+- MongoDB에서 Atlas를 이용하여 지원하는 Cloud DB 구축
+
+## 3. MongoDB 접근 권한 설정 & Compass 셋업
+
+- IP 허용 및 DB 유저 생성 설정
+- Compass를 이용한 DB 접근 안내
+
+## 4. MongoDB CRUD
+
+- MongoDB CLI를 이용한 CRUD 안내
+
+## 5. MySQL AWS 클라우드 구축 & Workbench 연결
+
+- AWS Lightsail을 이용한 MySQL 구축 안내
+- Workbench를 이용한 DB 클라이언트 접근 안내
+
+## 6. MySQL CRUD
+
+- MySQL CRUD 예제 실습
+
+# Section 3. NestJS 개요 및 객체지향 디자인 패턴
+
+## 1. NestJS 개발 환경 셋팅 & hello world!
+
+- nestjs 프로젝트 생성 및 프로젝트 구조 안내
+
+## 2. NestJS를 위한 VSCode 셋업 및 ESLinst, Prettier
+
+- VSCode 단축키 설명 및 ESLint, Prettier 설명
