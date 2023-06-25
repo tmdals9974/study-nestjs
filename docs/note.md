@@ -73,3 +73,7 @@
 
 - AWS Lightsail을 이용한 MySQL 구축 안내
 - Workbench를 이용한 DB 클라이언트 접근 안내
+
+## 6. MySQL CRUD
+
+- MySQL CRUD 예제 실습
