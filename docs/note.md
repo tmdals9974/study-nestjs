@@ -68,3 +68,8 @@
 ## 4. MongoDB CRUD
 
 - MongoDB CLI를 이용한 CRUD 안내
+
+## 5. MySQL AWS 클라우드 구축 & Workbench 연결
+
+- AWS Lightsail을 이용한 MySQL 구축 안내
+- Workbench를 이용한 DB 클라이언트 접근 안내
