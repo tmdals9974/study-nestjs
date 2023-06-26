@@ -93,3 +93,8 @@
 ## 2. NestJS를 위한 VSCode 셋업 및 ESLinst, Prettier
 
 - VSCode 단축키 설명 및 ESLint, Prettier 설명
+
+## 3. NestJS 구조 & Controller 패턴
+
+- NestJS 구조 안내
+- Controller 에서 사용할 수 있는 데코레이터들 소개 (Controller, Get, Post, HttpCode, Header, Req, Body, Param 등...)
