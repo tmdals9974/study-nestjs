@@ -107,3 +107,10 @@
   - `app.module.ts` 내 `providers` 배열에 종속성 주입 가능.
     - 종속성 주입 대상은 `Injectable` 데코레이터를 사용해야한다.
     - `Injectable` 데코레이터는 메타데이터를 첨부하는데, 이 메타데이터는 CatsService가 Nest IoC 컨테이너에서 관리할 수 있는 클래스임을 선언한다.
+
+## 5. Modules & 캡슐화
+
+- 모듈/컨트롤러/서비스 생성 시 명령어를 사용하면 파일을 생성해주면서 루트 모듈과 각 모듈에 자동으로 연결해줌.
+  - `nest g module cats`
+  - `nest g controller cats`
+  - `nest g service cats`
