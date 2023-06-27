@@ -98,3 +98,12 @@
 
 - NestJS 구조 안내
 - Controller 에서 사용할 수 있는 데코레이터들 소개 (Controller, Get, Post, HttpCode, Header, Req, Body, Param 등...)
+
+## 4. Providers & 의존성 주입 (DI)
+
+- Service, Repository, Factory, Helper 등 기본 Nest 클래스의 대부분은 `Provider`이다. ([참고 자료](https://www.wisewiredbooks.com/nestjs/overview/04-provider.html))
+  - Provider의 주요 기능은 `종속성을 주입`할 수 있다는 것이다.
+  - 즉, 개체는 서로 다양한 관계를 형성할 수 있으며 개체의 인스턴스를 연결하는 기능은 대부분 Nest 런타임 시스템에 위임될 수 있다.
+  - `app.module.ts` 내 `providers` 배열에 종속성 주입 가능.
+    - 종속성 주입 대상은 `Injectable` 데코레이터를 사용해야한다.
+    - `Injectable` 데코레이터는 메타데이터를 첨부하는데, 이 메타데이터는 CatsService가 Nest IoC 컨테이너에서 관리할 수 있는 클래스임을 선언한다.
