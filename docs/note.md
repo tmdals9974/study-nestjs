@@ -114,3 +114,7 @@
   - `nest g module cats`
   - `nest g controller cats`
   - `nest g service cats`
+
+## 6. [보충] 캡슐화 추가 설명
+
+- nestjs의 모듈과 캡슐화에 대한 부가 설명
