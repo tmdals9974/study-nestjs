@@ -118,3 +118,26 @@
 ## 6. [보충] 캡슐화 추가 설명
 
 - nestjs의 모듈과 캡슐화에 대한 부가 설명
+
+## 7. Nest Middleware
+
+- 미들웨어는 라우트 핸들러 이전에 호출되는 함수. Express 미들웨어와 동일하다.
+- `nest g middleware logger`
+- 생성된 `logger.middleware.ts` 파일 수정 (`use(req: Request, res: Response, next: NextFunction)`)
+- 이후 use 메소드 내에 로직 작성
+- middleware를 module에 등록
+
+```typescript
+//app.module.ts
+@Module({
+  imports: [CatsModule],
+  controllers: [AppController],
+  providers: [AppService],
+})
+export class AppModule implements NestModule {
+  //middleware는 configure로 등록 가능
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(LoggerMiddleware).forRoutes("*"); // forRoutes("cats") 와 같이 적용시킬 대상을 한정할 수 있음
+  }
+}
+```
