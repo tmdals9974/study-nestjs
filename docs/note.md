@@ -227,6 +227,25 @@ export class AppModule implements NestModule {
   ```
 
 ## 9. [보충] Pipe 패턴에 대하여
-  - [Pipe 패턴이란?](https://learn.microsoft.com/en-us/azure/architecture/patterns/pipes-and-filters)
-  - 커스텀 파이프 생성 강의
-  - 동시에 여러개의 파이프를 이용하는 예제 안내
+
+- [Pipe 패턴이란?](https://learn.microsoft.com/en-us/azure/architecture/patterns/pipes-and-filters)
+- 커스텀 파이프 생성 강의
+- 동시에 여러개의 파이프를 이용하는 예제 안내
+
+## 10. Interceptors & AOP 패턴
+
+- Interceptors
+
+  - API `실행 전` 과 `실행 후` 모두 핸들링 가능
+
+  ```typescript
+  // success.interceptor.ts
+  @Injectable()
+  export class SuccessInterceptor implements NestInterceptor {
+    intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
+      console.log("Before..."); //컨트롤러 실행 전 로그찍힘
+
+      return next.handle().pipe(map((data) => ({ success: true, data }))); //반환값에 관여함.
+    }
+  }
+  ```
