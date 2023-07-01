@@ -141,3 +141,87 @@ export class AppModule implements NestModule {
   }
 }
 ```
+
+## 8. Exception filter & Pipes
+
+- HttpException
+
+  - nestjs에서 기본으로 지원해주는 Exception
+
+  ```typescript
+  @Get()
+  getCat() {
+    throw new HttpException('error', 401);
+    //api 리턴값: { statusCode: 401, message: "error" }
+  }
+  ```
+
+- Exception Filter
+
+  - `ExceptionFilter` 인터페이스를 구현하여 [nestjs 전역/컨트롤러/일부 api]에 오류 필터를 걸 수 있음.
+    - 컨트롤러/일부 API에 오류 필터 시, 매칭되는 라우터가 없거나 하는 경우에는 필터가 걸리지 않음.
+    - nestjs 전역에 처리 시, 모든 오류에 대응 가능
+
+  ```typescript
+  //http-exception.filter.ts
+  @Catch(HttpException)
+  export class HttpExceptionFilter implements ExceptionFilter {
+    catch(exception: HttpException, host: ArgumentsHost) {
+      const ctx = host.switchToHttp();
+      const response = ctx.getResponse<Response>();
+      const request = ctx.getRequest<Request>();
+      const status = exception.getStatus();
+      const error = exception.getResponse(); //string | object
+
+      if (typeof error === "string") {
+        response.status(status).json({
+          success: false,
+          timestamp: new Date().toISOString(),
+          path: request.url,
+          error,
+        });
+      } else {
+        response.status(status).json({
+          statusCode: status,
+          timestamp: new Date().toISOString(),
+          ...error,
+        });
+      }
+    }
+  }
+
+  //cats.controller.ts
+  @Controller("cats")
+  @UseFilters(HttpExceptionFilter) //해당 컨트롤러에 필터 적용
+  export class CatsController {
+    constructor(private readonly catsService: CatsService) {}
+
+    @Get()
+    @UseFilters(HttpExceptionFilter) //특정 api에 필터 적용
+    getCat() {
+      throw new HttpException("error", 401);
+      //api 리턴값: { statusCode: 401, timestamp: "...", path: "/cats", message: "error" }
+    }
+  }
+
+  //main.ts
+  async function bootstrap() {
+    const app = await NestFactory.create(AppModule);
+    app.useGlobalFilters(new HttpExceptionFilter()); //전역 필터 적용
+    await app.listen(8080);
+  }
+  bootstrap();
+  ```
+
+- Pipe
+  - 타입 변환과 유효성 검사를 자동으로 해주는 기능.
+  - ParseIntPipe, ParseBoolPipe, ParseArrayPipe, ParseUUIDPipe 등 여러 파이프가 내장되어있음.
+  - 아래와 같이 사용 가능
+  ```typescript
+  @Get(':id')
+  async findOne(@Param('id', ParseIntPipe) id: number) { 
+    //@Param(id) id 로 사용 시 타입 추측은 any 이며, 실제로는 string으로 반환됨.
+    //Pipe를 이용하여 number로 변환. number변환이 불가능할 경우 Exception 반환.
+    return this.catsService.findOne(id);
+  }
+  ```
