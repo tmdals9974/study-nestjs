@@ -219,9 +219,14 @@ export class AppModule implements NestModule {
   - 아래와 같이 사용 가능
   ```typescript
   @Get(':id')
-  async findOne(@Param('id', ParseIntPipe) id: number) { 
+  async findOne(@Param('id', ParseIntPipe) id: number) {
     //@Param(id) id 로 사용 시 타입 추측은 any 이며, 실제로는 string으로 반환됨.
     //Pipe를 이용하여 number로 변환. number변환이 불가능할 경우 Exception 반환.
     return this.catsService.findOne(id);
   }
   ```
+
+## 9. [보충] Pipe 패턴에 대하여
+  - [Pipe 패턴이란?](https://learn.microsoft.com/en-us/azure/architecture/patterns/pipes-and-filters)
+  - 커스텀 파이프 생성 강의
+  - 동시에 여러개의 파이프를 이용하는 예제 안내
