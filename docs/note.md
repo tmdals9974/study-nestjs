@@ -249,3 +249,9 @@ export class AppModule implements NestModule {
     }
   }
   ```
+
+# Section 4. 프로젝트 1: 고양이 정보 커뮤니티
+
+## 1. 프로젝트 설계
+
+- 프로젝트 결과물 및 커리큘럼 소개
