@@ -6,7 +6,7 @@ const options: SchemaOptions = {
 };
 
 @Schema(options)
-export class Cat extends Document {
+export class Cat {
   @Prop({
     required: true,
     unique: true,
@@ -32,6 +32,18 @@ export class Cat extends Document {
   @Prop()
   @IsString()
   imgUrl: string;
+
+  readonly readOnlyData: {
+    email: string;
+    name: string;
+  };
 }
 
 export const CatSchema = SchemaFactory.createForClass(Cat);
+
+CatSchema.virtual('readOnlyData').get(function (this: Cat) {
+  return {
+    email: this.email,
+    name: this.name,
+  };
+});

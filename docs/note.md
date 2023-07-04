@@ -272,3 +272,15 @@ export class AppModule implements NestModule {
   - `class-validator` `class-transformer` 라이브러리를 쓰면 데코레이터를 이용하여 validation 가능.
   - 사용하려면 main.ts에 `app.useGlobalPipes(new ValidationPipe());` 등록 필요.
   - 사용법은 `cats.schema.ts` 파일 참고
+
+## 4. 회원가입 서비스 개발 & DTO 패턴
+
+- DTO 패턴을 이용하여 `Client > Controller > Service > DB` 모든 과정에서 DTO를 이용.
+  - `Client > Controller` 과정에선 DTO를 이용하여 Validation 가능.
+  - `cats.request.dto.ts` 파일 참고
+- Service 단에서 Mongoose를 이용하기 위한 단계
+  - `cats.module.ts`에 `imports: [MongooseModule.forFeature([{ name: Cat.name, schema: CatSchema }])]` 등록
+  - `cats.service.ts`에 `constructor(@InjectModel(Cat.name) private readonly catModel: Model<Cat>) {}` 등록
+  - 이후 `await this.catModel.exists({ email })` 처럼 사용 가능
+- `bcrypt, @types/bcrypt`를 이용하여 해쉬/암호화 가능
+- `Schema`에서 `virtual` 함수를 이용하여, 가상의 클래스?필드?를 생성하여 반환할 수 있음. 사용자에게 반환할 때 필터링하여 보여주고 싶을 때 주로 사용함.
