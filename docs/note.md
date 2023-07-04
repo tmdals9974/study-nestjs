@@ -263,3 +263,8 @@ export class AppModule implements NestModule {
   - nestjs에서 typescript에서 더 쉽게 이용할 수 있도록 래핑한 `@nestjs/mongoose`를 제공
 - 환경 변수
   - `@nestjs/config`을 설치하여 `.env` 사용 가능
+
+## 3. DB 스키마, Controller 설계 & validation
+
+- DB 스키마: `cats.schema.ts` 파일 참고
+- 스키마 내 Validation: `class-validator` `class-transformer` 라이브러리를 쓰면 데코레이터를 이용하여 validation 가능. `cats.schema.ts` 파일 참고
