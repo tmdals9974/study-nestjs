@@ -255,3 +255,11 @@ export class AppModule implements NestModule {
 ## 1. 프로젝트 설계
 
 - 프로젝트 결과물 및 커리큘럼 소개
+
+## 2. NestJS와 DB 연결하기, 환경 변수 설정
+
+- MongoDB
+  - `mongoose`를 이용하여 mongoDB 연결
+  - nestjs에서 typescript에서 더 쉽게 이용할 수 있도록 래핑한 `@nestjs/mongoose`를 제공
+- 환경 변수
+  - `@nestjs/config`을 설치하여 `.env` 사용 가능
