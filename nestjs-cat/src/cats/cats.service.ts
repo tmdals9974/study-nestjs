@@ -1,8 +1,4 @@
-import {
-  HttpException,
-  Injectable,
-  UnauthorizedException,
-} from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { CatRequestDto } from './dto/cats.request.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Cat } from './cats.schema';
@@ -11,7 +7,6 @@ import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class CatsService {
-  //쿼리.. 스키마..
   constructor(@InjectModel(Cat.name) private readonly catModel: Model<Cat>) {}
 
   async signUp(body: CatRequestDto) {

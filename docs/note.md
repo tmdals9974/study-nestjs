@@ -284,3 +284,22 @@ export class AppModule implements NestModule {
   - 이후 `await this.catModel.exists({ email })` 처럼 사용 가능
 - `bcrypt, @types/bcrypt`를 이용하여 해쉬/암호화 가능
 - `Schema`에서 `virtual` 함수를 이용하여, 가상의 클래스?필드?를 생성하여 반환할 수 있음. 사용자에게 반환할 때 필터링하여 보여주고 싶을 때 주로 사용함.
+
+## 5. NestJS와 fastify & 협업을 위한 API 문서 만들기, CORS 문제
+
+- Fastify
+
+  - Nest는 fastify와 express를 모두 호환하지만, express가 기본 http 공급자임.
+  - fastify가 express보다 성능이 더 좋으나, 생태계가 좁기 때문.
+  - 추후 성능 이슈가 있을 경우 fastify로 변경하는 것도 고려해볼만 함.
+
+- Swagger
+
+  - `@nestjs/swagger` `[swagger-ui-express, fastify-swagger]`
+  - 사용하려면 `main.ts`에 등록 필수
+  - api에 @ApiOperation 등을 이용하여 추가정보등록이 가능하다.
+  - dto에 @ApiProperty 등을 이용하여 추가정보등록이 가능하다.
+
+- Schema, DTO 간 중복되는 선언 문제
+  - 재사용성 향상을 위해 Schema를 기준으로 DTO에서 상속받는 형식이 가능하.
+  - 상속받을때 nestjs에서 제공하는 PartialType, PickType, OmitType 등을 이용하여 커스텀 가능하다. [공식문서](https://docs.nestjs.com/openapi/mapped-types)
