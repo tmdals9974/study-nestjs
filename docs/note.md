@@ -303,3 +303,11 @@ export class AppModule implements NestModule {
 - Schema, DTO 간 중복되는 선언 문제
   - 재사용성 향상을 위해 Schema를 기준으로 DTO에서 상속받는 형식이 가능하.
   - 상속받을때 nestjs에서 제공하는 PartialType, PickType, OmitType 등을 이용하여 커스텀 가능하다. [공식문서](https://docs.nestjs.com/openapi/mapped-types)
+
+## 6. Repository 패턴과 레이어 분리
+
+- Respository 패턴
+  - service: 비지니스 로직
+  - repository : db 접근 레이어
+  - 여러개의 Service단에서 repository를 재사용 가능. 책임/분리 명확해짐.
+  - 여러개의 db를 사용할 때 더 효율적.
