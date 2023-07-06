@@ -311,3 +311,14 @@ export class AppModule implements NestModule {
   - repository : db 접근 레이어
   - 여러개의 Service단에서 repository를 재사용 가능. 책임/분리 명확해짐.
   - 여러개의 db를 사용할 때 더 효율적.
+
+## 7. JWT와 로그인 서비스 & 순환 참조 모듈
+
+- [jwt](https://docs.nestjs.com/security/authentication)
+
+  - npm i @nestjs/jwt @nestjs/passport passport-jwt passport
+  - npm i -D @types/passport-jwt
+  - 참고파일: `auth.module.ts`, `auth.service.ts` `jwt.guard.ts`, `jwt.strategy.ts`
+
+- 순환 참조 모듈
+  - 각 모듈간 서로 import하는 순환 참조 형태가 되었다면, 양쪽 다 `forwardRef(() => CatsModule)` 과 같은 형태로 바꿈으로 해결할 수 있다.
