@@ -322,3 +322,10 @@ export class AppModule implements NestModule {
 
 - 순환 참조 모듈
   - 각 모듈간 서로 import하는 순환 참조 형태가 되었다면, 양쪽 다 `forwardRef(() => CatsModule)` 과 같은 형태로 바꿈으로 해결할 수 있다.
+
+## 8. passport와 인증 전략 & Custom decorator
+
+- passport
+  - jwt 인증 시 사용
+- custom decorator
+  - `user.decorator.ts` 참고
