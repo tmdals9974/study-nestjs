@@ -329,3 +329,23 @@ export class AppModule implements NestModule {
   - jwt 인증 시 사용
 - custom decorator
   - `user.decorator.ts` 참고
+
+## 9. Swagger API 보안 설정 & 로그인 API 프론트엔드와 연결
+
+- `express-basic-auth`
+  - npm i express-basic-auth
+  - 위 라이브러리를 이용해 특정경로에 아이디/비밀번호를 이용한 보안설정이 가능하다.
+  ```typescript
+  //main.ts
+  async function bootstrap() {
+    //...
+    app.use(
+      ["/docs", "/docs-json"],
+      expressBasicAuth({
+        challenge: true,
+        users: { [process.env.SWAGGER_USER]: process.env.SWAGGER_PASSWORD },
+      })
+    );
+    //...
+  }
+  ```
