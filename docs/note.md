@@ -349,3 +349,10 @@ export class AppModule implements NestModule {
     //...
   }
   ```
+
+## 10. Multer와 미디어 파일 서비스 (mp3, mp4, img 등)
+- [Multer](https://docs.nestjs.com/techniques/file-upload)
+  - npm i -D @types/multer
+  - `multer.options.ts` : Multer 파일 저장 옵션은 해당 파일 참고 
+  - Module 등록, Api에서의 사용은 `cats.controller.ts`, `cats.module.ts` 참고
+  - StaticAsset 등록은 `main.ts` 참고
