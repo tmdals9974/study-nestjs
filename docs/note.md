@@ -369,3 +369,9 @@ export class AppModule implements NestModule {
 ## 12. 고양이들 가져오기 & 프로젝트 완성
 
 - 전체 고양이 가져오기 API 생성
+
+## 13. 고양이끼리 소통 API (댓글, 좋아요) - DB 설계, 컨트롤러 정의
+
+- 고양이 프로필에 댓글/좋아요 기능 추가
+  - DB 설계 및, 컨트롤러/서비스/스키마 정의
+  - 스키마 정의 시 Mongoose로 Collection 간 Ref 설정하는 방법 안내 (`comments.schema.ts` 참고)

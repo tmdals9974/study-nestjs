@@ -3,11 +3,12 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
 import { Document, SchemaOptions } from 'mongoose';
 
-const options: SchemaOptions = {
+export const catOptions: SchemaOptions = {
+  collection: 'cats', //미입력시, 소문자, 복수형 자동 변환하여 사용 (Cat을 cats로)
   timestamps: true,
 };
 
-@Schema(options)
+@Schema(catOptions)
 export class Cat extends Document {
   @ApiProperty({
     example: 'tmdals9974@naver.com',
