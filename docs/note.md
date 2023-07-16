@@ -351,8 +351,17 @@ export class AppModule implements NestModule {
   ```
 
 ## 10. Multer와 미디어 파일 서비스 (mp3, mp4, img 등)
+
 - [Multer](https://docs.nestjs.com/techniques/file-upload)
   - npm i -D @types/multer
-  - `multer.options.ts` : Multer 파일 저장 옵션은 해당 파일 참고 
+  - `multer.options.ts` : Multer 파일 저장 옵션은 해당 파일 참고
   - Module 등록, Api에서의 사용은 `cats.controller.ts`, `cats.module.ts` 참고
   - StaticAsset 등록은 `main.ts` 참고
+
+## 11. [보충] Postman에서 미디어 파일 업로드
+
+- Postman에서 파일 업로드하는 방법 안내
+  1. Headers에 JWT 토큰 입력
+  2. Body > form-data 설정
+  3. 알맞는 Key 입력, Key Type을 File로 변경
+  4. Value에 파일 선택하여 업로드
