@@ -375,3 +375,9 @@ export class AppModule implements NestModule {
 - 고양이 프로필에 댓글/좋아요 기능 추가
   - DB 설계 및, 컨트롤러/서비스/스키마 정의
   - 스키마 정의 시 Mongoose로 Collection 간 Ref 설정하는 방법 안내 (`comments.schema.ts` 참고)
+
+## 14. 고양이끼리 소통 API (댓글, 좋아요) - 서비스 완성
+
+- 고양이 프로필 댓글/좋아요 기능 구현
+  - 실제 코드 구현
+  - schema 내 virtual 필드를 이용하여 다른 Document와 Join하는 방법 안내

@@ -1,15 +1,52 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { CommentsCreateDto } from './comments.create.dto';
+import { InjectModel } from '@nestjs/mongoose';
+import { Comments } from './comments.schema';
+import { Model } from 'mongoose';
+import { CatsRepository } from 'src/cats/cats.repository';
 
 @Injectable()
 export class CommentsService {
-  getAllComments() {
-    throw new Error('Method not implemented.');
+  constructor(
+    @InjectModel(Comments.name) private readonly commentsModel: Model<Comments>,
+    private readonly catsRepository: CatsRepository,
+  ) {}
+
+  async getAllComments() {
+    try {
+      const comments = await this.commentsModel.find();
+      return comments;
+    } catch (err) {
+      throw new BadRequestException(err.message);
+    }
   }
-  createComment(id: string, comments: CommentsCreateDto) {
-    throw new Error('Method not implemented.');
+
+  async createComment(id: string, commentData: CommentsCreateDto) {
+    try {
+      const targetCat = await this.catsRepository.findCatByIdWithoutPassword(
+        id,
+      );
+      const { contents, author } = commentData;
+      const validatedAuthor =
+        await this.catsRepository.findCatByIdWithoutPassword(author);
+      const newComment = new this.commentsModel({
+        author: validatedAuthor._id,
+        contents,
+        info: targetCat._id,
+      });
+      return await newComment.save();
+    } catch (err) {
+      throw new BadRequestException(err.message);
+    }
   }
-  plusLike(id: string) {
-    throw new Error('Method not implemented.');
+
+  async plusLike(id: string) {
+    try {
+      const comment = await this.commentsModel.findById(id);
+      comment.likeCount += 1;
+      return await comment.save();
+    } catch (err) {
+      throw new BadRequestException(err.message);
+    }
   }
 }
