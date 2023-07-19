@@ -391,3 +391,8 @@ export class AppModule implements NestModule {
 ## 2. Multer + S3 연동
 
 - `nestjs-multer-extended` 를 이용하여 multer + s3 연동 강의
+
+## 3. [보충강의] AWS-SDK를 사용하여 S3에 업로드
+
+- `nestjs-multer-extended`가 nestjs7버전까지만 지원하여, AWS-SDK를 이용하여 파일 업로드하는 방법 강의
+- https://github.com/amamov/teaching-nestjs-a-to-z/tree/main/nestjs-aws-s3
