@@ -396,3 +396,8 @@ export class AppModule implements NestModule {
 
 - `nestjs-multer-extended`가 nestjs7버전까지만 지원하여, AWS-SDK를 이용하여 파일 업로드하는 방법 강의
 - https://github.com/amamov/teaching-nestjs-a-to-z/tree/main/nestjs-aws-s3
+
+## 4. AWS 클라우드 VPS 구축 & PM2로 서버 운영하기
+
+- PM2 소개
+- LightSail을 이용한 클라우드 컴퓨팅 소개
