@@ -387,3 +387,7 @@ export class AppModule implements NestModule {
 ## 1. AWS 클라우드 컴퓨팅 & S3 구축
 
 - AWS S3 생성 및 설정 안내
+
+## 2. Multer + S3 연동
+
+- `nestjs-multer-extended` 를 이용하여 multer + s3 연동 강의
