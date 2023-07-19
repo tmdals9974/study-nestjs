@@ -381,3 +381,9 @@ export class AppModule implements NestModule {
 - 고양이 프로필 댓글/좋아요 기능 구현
   - 실제 코드 구현
   - schema 내 virtual 필드를 이용하여 다른 Document와 Join하는 방법 안내
+
+# Section 5. 프로젝트 배포와 서버 운영
+
+## 1. AWS 클라우드 컴퓨팅 & S3 구축
+
+- AWS S3 생성 및 설정 안내
