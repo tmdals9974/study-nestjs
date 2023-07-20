@@ -401,3 +401,9 @@ export class AppModule implements NestModule {
 
 - PM2 소개
 - LightSail을 이용한 클라우드 컴퓨팅 소개
+
+## 5. [보너스] 무료 도메인 등록
+
+- 가성비 도메인: `prkbun`
+- 무료 도메인: `내도메인.한국`
+- 등을 이용하여 도메인을 발급받은 이후 IP 연결하여 도메인 등록.
