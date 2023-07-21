@@ -413,3 +413,7 @@ export class AppModule implements NestModule {
 ## 1. 프로젝트 소개
 
 - 프로젝트 완성물 미리보기
+
+## 2. 서버 사이드 렌더링의 이해 (CSR vs SSR)
+
+- CSR과 SSR에 대한 간략한 소개
