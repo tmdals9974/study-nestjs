@@ -425,3 +425,10 @@ export class AppModule implements NestModule {
   - 템플릿엔진은 `handlebars` 사용 (`main.ts`, `app.controller.ts` 참고)
   - .env 사용을 위해 `@nestjs/config` 사용 (`app.module.ts` 에 Global하게 등록 필요)
   - mongoDB 사용을 위해 `@nestjs/mongoose`, `mongoose` 사용 (`app.module.ts` 에 등록 필요)
+
+## 4. HTTP vs Socket
+
+- 단방향 연결인 HTTP와 양방향 연결인 Socket의 차이점 소개
+- 소켓 사용을 위해 `@nestjs/websockets`, `@nestjs/platform-socket.io` 사용
+- 소켓 사용을 위해 nestjs의 게이트웨이 사용 (`nest g ga chats`)
+- front에서 소켓 사용을 위한 script import
