@@ -407,3 +407,9 @@ export class AppModule implements NestModule {
 - 가성비 도메인: `prkbun`
 - 무료 도메인: `내도메인.한국`
 - 등을 이용하여 도메인을 발급받은 이후 IP 연결하여 도메인 등록.
+
+# Section 6. 프로젝트 2: 랜덤 채팅 웹 앱 (풀스택, 소켓 프로그래밍)
+
+## 1. 프로젝트 소개
+
+- 프로젝트 완성물 미리보기
