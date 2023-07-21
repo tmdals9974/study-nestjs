@@ -417,3 +417,11 @@ export class AppModule implements NestModule {
 ## 2. 서버 사이드 렌더링의 이해 (CSR vs SSR)
 
 - CSR과 SSR에 대한 간략한 소개
+
+## 3. MVC 패턴, 프로젝트 셋업
+
+- MVC 패턴에 대한 간략한 소개
+- MVC 패턴을 가진 nestjs 프로젝트 셋업
+  - 템플릿엔진은 `handlebars` 사용 (`main.ts`, `app.controller.ts` 참고)
+  - .env 사용을 위해 `@nestjs/config` 사용 (`app.module.ts` 에 Global하게 등록 필요)
+  - mongoDB 사용을 위해 `@nestjs/mongoose`, `mongoose` 사용 (`app.module.ts` 에 등록 필요)
