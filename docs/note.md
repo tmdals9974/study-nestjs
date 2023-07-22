@@ -432,3 +432,8 @@ export class AppModule implements NestModule {
 - 소켓 사용을 위해 `@nestjs/websockets`, `@nestjs/platform-socket.io` 사용
 - 소켓 사용을 위해 nestjs의 게이트웨이 사용 (`nest g ga chats`)
 - front에서 소켓 사용을 위한 script import
+
+## 5. 유니캐스팅 (Unicasting) : emit & on
+
+- socket.emit: data 전송
+- socket.on : event 핸들링
