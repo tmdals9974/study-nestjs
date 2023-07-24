@@ -437,3 +437,9 @@ export class AppModule implements NestModule {
 
 - socket.emit: data 전송
 - socket.on : event 핸들링
+
+## 6. 네임스페이스의 이해와 Gateway 생명주기
+
+- 네임스페이스 개념 설명 및 socket에서 네임스페이스 사용 예제 안내
+- [Gateway 생명주기](https://docs.nestjs.com/websockets/gateways#lifecycle-hooks)
+  - OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect를 상속받아 생명주기 이용 가능
