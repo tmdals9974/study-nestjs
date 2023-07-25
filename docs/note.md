@@ -443,3 +443,7 @@ export class AppModule implements NestModule {
 - 네임스페이스 개념 설명 및 socket에서 네임스페이스 사용 예제 안내
 - [Gateway 생명주기](https://docs.nestjs.com/websockets/gateways#lifecycle-hooks)
   - OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect를 상속받아 생명주기 이용 가능
+
+## 7. 브로드캐스팅 (Broadcasting)
+
+- broadcasting: 모든 소켓에게 emit을 하는 것.
