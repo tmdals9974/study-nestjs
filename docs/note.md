@@ -456,3 +456,7 @@ export class AppModule implements NestModule {
 
 - 소켓 정보(유저네임)들과, 채팅로그를 남기는 디비 설계
 - model.ts 로 스키마 작성 (`schema.ts/model.ts` 모두 의미하는 바는 동일.)
+
+## 10. DB 연결 및 서비스 로직 마무리
+
+- 서비스 로직에 DB 연결을 추가하여 기능 완성
