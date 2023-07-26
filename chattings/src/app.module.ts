@@ -10,7 +10,7 @@ import * as mongoose from 'mongoose';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    MongooseModule.forRoot(process.env.MONGO_URL),
+    MongooseModule.forRoot(process.env.MONGODB_URI),
     ChatsModule,
   ],
   controllers: [AppController],

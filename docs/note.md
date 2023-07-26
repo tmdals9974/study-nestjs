@@ -460,3 +460,7 @@ export class AppModule implements NestModule {
 ## 10. DB 연결 및 서비스 로직 마무리
 
 - 서비스 로직에 DB 연결을 추가하여 기능 완성
+
+## 11. 디자인 입히기 with TailwindCSS & 프로젝트 마무리
+
+- tailwind를 이용하여 스타일링
