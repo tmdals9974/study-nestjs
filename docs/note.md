@@ -451,3 +451,8 @@ export class AppModule implements NestModule {
 ## 8. 이벤트 설계와 기본 서비스 로직 완성
 
 - 여태까지 배운내용을 기반으로 채팅서비스 기본 로직 완성
+
+## 9. DB 설계
+
+- 소켓 정보(유저네임)들과, 채팅로그를 남기는 디비 설계
+- model.ts 로 스키마 작성 (`schema.ts/model.ts` 모두 의미하는 바는 동일.)
