@@ -447,3 +447,7 @@ export class AppModule implements NestModule {
 ## 7. 브로드캐스팅 (Broadcasting)
 
 - broadcasting: 모든 소켓에게 emit을 하는 것.
+
+## 8. 이벤트 설계와 기본 서비스 로직 완성
+
+- 여태까지 배운내용을 기반으로 채팅서비스 기본 로직 완성
